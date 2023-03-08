@@ -2,9 +2,7 @@ import { ResponsiveLine } from "@nivo/line";
 import { mockData } from "../data/mockData";
 
 const LineChart = ({}) => {
-  let dataSorted = mockData.sort((a, b) => { return new Date(b.date) - new Date(a.date) });
-
-  let data = dataSorted.reduce((acc, { name, date, qty_sold }) => {
+  let data = mockData.reduce((acc, { name, date, qty_sold }) => {
     const existing = acc.find((item) => item.id === name);
     if (existing) {
       existing.data.push({ x: date, y: qty_sold });
@@ -16,18 +14,13 @@ const LineChart = ({}) => {
     }
     return acc;
   }, []);
-  //console.log(data);
+
+  console.log(data);
   return (
     <ResponsiveLine
       data={data}
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-      xScale={{
-        type: 'time',
-        format: '%Y-%m-%d',
-        useUTC: false,
-        precision: 'day',
-    }}
-    xFormat="time:%Y-%m-%d"
+      xScale={{ type: "point" }}
       yScale={{
         type: "linear",
         min: 0,
