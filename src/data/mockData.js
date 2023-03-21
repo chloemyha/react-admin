@@ -12,14 +12,14 @@ export const mockData = [
   {
     name: "Carrots",
     date: "2023-03-05",
-    qty_sold: 18,
+    qty_sold: 78,
   },
   {
     name: "Carrots",
     date: "2023-03-06",
-    qty_sold: 15,
+    qty_sold: 100,
   },
-  { name: "Cucumber", date: "2023-03-05", qty_sold: 13 },
+  { name: "Cucumber", date: "2023-03-05", qty_sold: 100 },
   {
     name: "Cucumber",
     date: "2023-06-05",
@@ -30,7 +30,7 @@ export const mockData = [
   {
     name: "Apples",
     date: "2023-03-06",
-    qty_sold: 20,
+    qty_sold: 40,
   },
   {
     name: "Apples",

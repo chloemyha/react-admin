@@ -3,7 +3,7 @@ import { ResponsivePie } from "@nivo/pie";
 import { mockData } from "../data/mockData";
 
 const PieChart = ({}) => {
-  function aggregateMockDataByName(mockLine) {
+  function aggregateMockDataByName(mockData) {
     let res = [];
     for (let mockDataItem of mockData) {
       let existing = res.find((item) => item.id === mockDataItem.name);

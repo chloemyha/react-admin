@@ -2,6 +2,7 @@ import { ResponsiveLine } from "@nivo/line";
 import { mockData } from "../data/mockData";
 
 const LineChart = ({}) => {
+  let dataSorted = mockData.sort((a, b) => { return new Date(b.date) - new Date(a.date) });
   let data = mockData.reduce((acc, { name, date, qty_sold }) => {
     const existing = acc.find((item) => item.id === name);
     if (existing) {
@@ -28,6 +29,7 @@ const LineChart = ({}) => {
         stacked: true,
         reverse: false,
       }}
+  
       yFormat=" >-.2f"
       axisTop={null}
       axisRight={null}
